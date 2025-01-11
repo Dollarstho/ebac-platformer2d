@@ -4097,6 +4097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Enemy_2
       objectReference: {fileID: 0}
+    - target: {fileID: 8144437880397300720, guid: e0d57717ad485d748986ddb9eba2beb8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4184,6 +4188,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 152857737}
     m_Modifications:
+    - target: {fileID: 2830354966829661405, guid: 3de838754c767a446a5473969062a84e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3090786764695304946, guid: 3de838754c767a446a5473969062a84e, type: 3}
       propertyPath: m_Name
       value: PFB_Enemy_1
@@ -4202,7 +4210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8073972946613542793, guid: 3de838754c767a446a5473969062a84e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8073972946613542793, guid: 3de838754c767a446a5473969062a84e, type: 3}
       propertyPath: m_LocalRotation.w
