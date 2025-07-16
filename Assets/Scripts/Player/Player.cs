@@ -18,6 +18,11 @@ public class Player : MonoBehaviour
     public float animationDuration = .1f;
     public Ease ease = Ease.OutBack;
 
+    [Header("Animation player")]
+    public string boolRun = "Run";
+    public string boolJump = "Jump";
+    public Animator animator;
+
     private float _currentspeed;
 
     private bool _isJump = false;
@@ -49,10 +54,24 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-_currentspeed, rb.velocity.y);
+            if(rb.transform.localScale.x != -1)
+            {
+                rb.transform.DOScaleX (-1, .1f);
+            }
+            animator.SetBool(boolRun, true);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(_currentspeed, rb.velocity.y);
+            if (rb.transform.localScale.x != 1)
+            {
+                rb.transform.DOScaleX(1, .1f);
+            }
+            animator.SetBool(boolRun, true);
+        }
+        else
+        {
+            animator.SetBool(boolRun, false);
         }
     }
 
@@ -61,6 +80,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            animator.SetBool(boolJump, true);
             rb.velocity = Vector2.up * forcejump;
             rb.transform.localScale = Vector2.one;
 
@@ -70,6 +90,10 @@ public class Player : MonoBehaviour
 
             _isJump = true;
             
+        }
+        else
+        {
+            animator.SetBool(boolJump, false);
         }
     }
 
