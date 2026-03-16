@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 381479749102518897}
   - component: {fileID: 2350320873222795980}
-  - component: {fileID: 9081708910115299069}
+  - component: {fileID: 5573485110627122744}
   m_Layer: 0
   m_Name: PFB_Coin
   m_TagString: Untagged
@@ -163,7 +163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9081708910115299069
+--- !u!114 &5573485110627122744
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

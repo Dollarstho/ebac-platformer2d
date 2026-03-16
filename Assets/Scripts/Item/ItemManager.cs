@@ -16,9 +16,7 @@ public class ItemManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else
-        {
             Destroy(gameObject);
-        }
     }
     private void Start()
     {
