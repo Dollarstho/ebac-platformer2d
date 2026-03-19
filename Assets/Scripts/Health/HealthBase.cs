@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,9 +13,15 @@ public class HealthBase : MonoBehaviour
     private int _currentLife;
     private bool _isDead = false;
 
-        private void Awake()
+    [SerializeField] private FlashColor _flashColor;
+
+    private void Awake()
     {
         Init();
+        if(_flashColor == null)
+        {
+            _flashColor = GetComponent<FlashColor>();
+        }
     }
 
     private void Init()
@@ -31,6 +38,10 @@ public class HealthBase : MonoBehaviour
         if ( _currentLife <= 0)
         {
             Kill();
+        }
+        if (_flashColor != null)
+        {
+            _flashColor.Flash();
         }
     }
 
