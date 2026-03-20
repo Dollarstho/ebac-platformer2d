@@ -23,11 +23,6 @@ public class FlashColor : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-       
-    }
-
     public void Flash()
     {
         if(_currentTween != null)
