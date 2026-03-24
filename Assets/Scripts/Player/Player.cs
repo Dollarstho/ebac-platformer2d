@@ -4,6 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 public class Player : MonoBehaviour
 {
+    public HealthBase healthBase;
+
     [Header("Moviment setup")]
     public BoxCollider2D BoxCollider2D;
     public Rigidbody2D rb;
@@ -21,17 +23,26 @@ public class Player : MonoBehaviour
     [Header("Animation player")]
     public string boolRun = "Run";
     public string boolJump = "Jump";
+    public string triggerDeath = "Death";
     public Animator animator;
 
     private float _currentspeed;
 
     private bool _isJump = false;
 
-    
-    
-    void Start()
+
+    private void Awake()
     {
-        
+        if (healthBase != null)
+        {
+            healthBase.OnKill += OnPlayerKill;
+        }
+    }
+
+    private void OnPlayerKill()
+    {
+        healthBase.OnKill -= OnPlayerKill;
+            animator.SetTrigger(triggerDeath);
     }
 
     private void Update()
@@ -100,8 +111,13 @@ public class Player : MonoBehaviour
     private void HandleScaleJump()
     {
         rb.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-        rb.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-
-        
+        rb.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);   
     }
+
+    public void DestroyMe()
+    
+    {
+        Destroy(gameObject);
+    }
+
 }
