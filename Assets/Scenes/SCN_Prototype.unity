@@ -153,7 +153,7 @@ Transform:
   m_GameObject: {fileID: 66142580}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: -8.4, z: 0}
+  m_LocalPosition: {x: -12.9, y: -8.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -577,7 +577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3275394
+      value: -15.3
       objectReference: {fileID: 0}
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1077,7 +1077,7 @@ Transform:
   m_GameObject: {fileID: 609572654}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7687583, y: -0.3158822, z: -19.272127}
+  m_LocalPosition: {x: -13.531241, y: -0.3158822, z: -19.272127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1767,7 +1767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54753923
+      value: -17.8
       objectReference: {fileID: 0}
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2503,7 +2503,7 @@ Transform:
   m_GameObject: {fileID: 1087944585}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.585835, y: 4.4224606, z: 2.3340964}
+  m_LocalPosition: {x: 9.2, y: 9.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2941,6 +2941,7 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  triggerDeath: Death
   healthBase: {fileID: 0}
 --- !u!61 &1394353096
 BoxCollider2D:
@@ -3185,11 +3186,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.118797
+      value: 15.7
       objectReference: {fileID: 0}
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5924606
+      value: -18.6
       objectReference: {fileID: 0}
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3307,7 +3308,7 @@ Transform:
   m_GameObject: {fileID: 1544049082}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7687583, y: -0.3158822, z: -19.272127}
+  m_LocalPosition: {x: -13.531241, y: -0.3158822, z: -19.272127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3541,6 +3542,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1689266068}
+    - targetCorrespondingSourceObject: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1689266070}
     - targetCorrespondingSourceObject: {fileID: 3172524715885381094, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       insertIndex: -1
       addedObject: {fileID: 188951857}
@@ -3816,6 +3820,19 @@ MonoBehaviour:
   - {fileID: 1951632246}
   flashColor: {r: 1, g: 0, b: 0, a: 1}
   duration: 0.3
+--- !u!114 &1689266070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120816982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32412c681a9846c498d23ee0284d11d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1729756087}
 --- !u!1 &1694870280
 GameObject:
   m_ObjectHideFlags: 0
@@ -4338,6 +4355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da7be8e457a1b8438a5b4fbbb3d0e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBase: {fileID: 1729756088}
   BoxCollider2D: {fileID: 0}
   rb: {fileID: 1729756084}
   velocity: {x: 0, y: 0}
@@ -4350,6 +4368,7 @@ MonoBehaviour:
   ease: 27
   boolRun: Run
   boolJump: Jump
+  triggerDeath: Death
   animator: {fileID: 1689266066}
 --- !u!114 &1729756088
 MonoBehaviour:
@@ -4364,7 +4383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLife: 10
-  destroyOnKill: 1
+  destroyOnKill: 0
   _flashColor: {fileID: 1689266068}
 --- !u!1 &1734765060
 GameObject:
@@ -4653,6 +4672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 0
+  Coins: {fileID: 1910709558}
 --- !u!4 &1807266434
 Transform:
   m_ObjectHideFlags: 0
@@ -5081,7 +5101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x18
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5188,7 +5208,7 @@ Transform:
   m_GameObject: {fileID: 1911744575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.25, y: -13.52, z: 0}
+  m_LocalPosition: {x: 28.01, y: -13.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5245,6 +5265,7 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 1003228889}
   triggerAttack: Attack
+  triggerDeath: Death
   healthBase: {fileID: 1911744580}
 --- !u!50 &1911744579
 Rigidbody2D:
@@ -5287,7 +5308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLife: 10
   destroyOnKill: 1
-  _flashColor: {fileID: 0}
+  _flashColor: {fileID: 1911744581}
 --- !u!114 &1911744581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5574,6 +5595,7 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 716028701}
   triggerAttack: Attack
+  triggerDeath: Death
   healthBase: {fileID: 2001305692}
 --- !u!50 &2001305691
 Rigidbody2D:
@@ -5616,7 +5638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLife: 10
   destroyOnKill: 1
-  _flashColor: {fileID: 0}
+  _flashColor: {fileID: 2001305693}
 --- !u!114 &2001305693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5659,11 +5681,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.111204
+      value: -16.8
       objectReference: {fileID: 0}
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.952461
+      value: -18.3
       objectReference: {fileID: 0}
     - target: {fileID: 381479749102518897, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
       propertyPath: m_LocalPosition.z
