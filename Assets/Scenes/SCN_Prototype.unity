@@ -4345,7 +4345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBase: {fileID: 1729756088}
-  BoxCollider2D: {fileID: 0}
+  BoxCollider2D: {fileID: 1729756083}
   rb: {fileID: 1729756084}
   velocity: {x: 0, y: 0}
   speed: 15
