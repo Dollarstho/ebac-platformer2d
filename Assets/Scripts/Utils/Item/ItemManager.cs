@@ -3,32 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Core.Singleton;
 using TMPro;
+using System;
 
 public class ItemManager : Singleton<ItemManager>
 {
 
-    public int coins;
+    public SOCoinCollect coinCollect;
+    public SOLifeCollect lifeCollect;
+
     public TextMeshProUGUI Coins;
-   
+    public TextMeshProUGUI Life;
+
     private void Start()
     {
         Reset();
     }
     
 
-    private void Reset()
+    public void Reset()
     {
-      coins = 0; 
+      coinCollect.coinValue = 0;
+      lifeCollect.lifeValue = 1;
     }
 
     public void AddCoins(int amount = 1)
     {
-        coins += amount;
+        coinCollect.coinValue += amount;
+        UpdateUI();
+    }
+    public void AddLife(int amount = 1)
+    {
+        lifeCollect.lifeValue += amount;
         UpdateUI();
     }
 
     public void UpdateUI()
     {
-        UIInGameManager.UpdateTextCoins(coins.ToString());
+        UIInGameManager.UpdateTextCoins(coinCollect.coinValue.ToString());
+        UIInGameManager.UpdateTextLife(lifeCollect.lifeValue.ToString());
     }
 }
