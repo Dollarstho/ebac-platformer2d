@@ -25,7 +25,6 @@ public class SOPlayerSetup : ScriptableObject
     public string boolRun = "Run";
     public string boolJump = "Jump";
     public string triggerDeath = "Death";
-    public Animator animator;
 
 
 }
