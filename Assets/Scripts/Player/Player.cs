@@ -20,10 +20,8 @@ public class Player : MonoBehaviour
     public float animationDuration = .1f;
     public Ease ease = Ease.OutBack;
 
-    [Header("Animation player")]
-    public string boolRun = "Run";
-    public string boolJump = "Jump";
-    public string triggerDeath = "Death";
+    [Header("Setup")]
+    public SOPlayerSetup sOPlayerSetup;
     public Animator animator;
 
     private float _currentspeed;
@@ -42,7 +40,7 @@ public class Player : MonoBehaviour
     private void OnPlayerKill()
     {
         healthBase.OnKill -= OnPlayerKill;
-            animator.SetTrigger(triggerDeath);
+        animator.SetTrigger(sOPlayerSetup.triggerDeath);
     }
 
     private void Update()
@@ -69,7 +67,7 @@ public class Player : MonoBehaviour
             {
                 rb.transform.DOScaleX (-1, .1f);
             }
-            animator.SetBool(boolRun, true);
+            animator.SetBool(sOPlayerSetup.boolRun, true);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -78,11 +76,11 @@ public class Player : MonoBehaviour
             {
                 rb.transform.DOScaleX(1, .1f);
             }
-            animator.SetBool(boolRun, true);
+            animator.SetBool(sOPlayerSetup.boolRun, true);
         }
         else
         {
-            animator.SetBool(boolRun, false);
+            animator.SetBool(sOPlayerSetup.boolRun, false);
         }
     }
 
@@ -91,7 +89,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool(boolJump, true);
+            animator.SetBool(sOPlayerSetup.boolJump, true);
             rb.velocity = Vector2.up * forcejump;
             rb.transform.localScale = Vector2.one;
 
@@ -104,7 +102,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            animator.SetBool(boolJump, false);
+            animator.SetBool(sOPlayerSetup.boolJump, false);
         }
     }
 
