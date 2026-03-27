@@ -2026,6 +2026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 5573485110627122744, guid: 762a17d3c6e717247bf053947ca7473e, type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
