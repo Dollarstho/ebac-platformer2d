@@ -15,12 +15,11 @@ public class Player : MonoBehaviour
 
     private float _currentspeed;
 
-    private bool _isJump = false;
-
     [Header("Jump Collision Check")]
     public Collider2D collider2D;
     public float distToGround;
     public float spaceToGround = .1f;
+    public ParticleSystem jumpVFX;
 
 
 
@@ -102,13 +101,20 @@ public class Player : MonoBehaviour
             DOTween.Kill(rb.transform);
 
             HandleScaleJump();
+            PlayJumpVFX();
 
-            _isJump = true;
-            
         }
         else
         {
             animator.SetBool(sOPlayerSetup.boolJump, false);
+        }
+    }
+
+    private void PlayJumpVFX()
+    {
+        if (jumpVFX != null)
+        {
+            jumpVFX.Play();
         }
     }
 
