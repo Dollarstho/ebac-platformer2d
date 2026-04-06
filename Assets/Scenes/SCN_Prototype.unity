@@ -4729,15 +4729,8 @@ MonoBehaviour:
   BoxCollider2D: {fileID: 1729756083}
   rb: {fileID: 1729756084}
   velocity: {x: 0, y: 0}
-  speed: 15
-  forcejump: 40
-  speedRun: 30
-  jumpScaleY: 1.5
-  jumpScaleX: 0.7
-  animationDuration: 0.1
-  ease: 27
-  sOPlayerSetup: {fileID: 11400000, guid: acf6d864700184d478833336e0f755d3, type: 2}
   animator: {fileID: 1689266066}
+  sOPlayerSetup: {fileID: 11400000, guid: acf6d864700184d478833336e0f755d3, type: 2}
 --- !u!114 &1729756088
 MonoBehaviour:
   m_ObjectHideFlags: 0

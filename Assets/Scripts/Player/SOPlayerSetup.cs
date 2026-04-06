@@ -8,9 +8,6 @@ public class SOPlayerSetup : ScriptableObject
 
 {
     [Header("Moviment setup")]
-    public BoxCollider2D BoxCollider2D;
-    public Rigidbody2D rb;
-    public Vector2 velocity;
     public float speed;
     public float forcejump = 2;
     public float speedRun;

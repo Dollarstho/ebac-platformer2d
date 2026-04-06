@@ -5,24 +5,12 @@ using DG.Tweening;
 public class Player : MonoBehaviour
 {
     public HealthBase healthBase;
-
-    [Header("Moviment setup")]
     public BoxCollider2D BoxCollider2D;
     public Rigidbody2D rb;
     public Vector2 velocity;
-    public float speed;
-    public float forcejump = 2;
-    public float speedRun;
-
-    [Header("Animation setup")]
-    public float jumpScaleY = 1.5f;
-    public float jumpScaleX = .7f;
-    public float animationDuration = .1f;
-    public Ease ease = Ease.OutBack;
-
-    [Header("Setup")]
-    public SOPlayerSetup sOPlayerSetup;
     public Animator animator;
+
+    public SOPlayerSetup sOPlayerSetup;
 
     private float _currentspeed;
 
@@ -53,11 +41,11 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.LeftShift)) 
         {
-            _currentspeed = speedRun;
+            _currentspeed = sOPlayerSetup.speedRun;
         }
         else
         {
-            _currentspeed = speed;
+            _currentspeed = sOPlayerSetup.speed;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -90,7 +78,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetBool(sOPlayerSetup.boolJump, true);
-            rb.velocity = Vector2.up * forcejump;
+            rb.velocity = Vector2.up * sOPlayerSetup.forcejump;
             rb.transform.localScale = Vector2.one;
 
             DOTween.Kill(rb.transform);
@@ -108,8 +96,8 @@ public class Player : MonoBehaviour
 
     private void HandleScaleJump()
     {
-        rb.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-        rb.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);   
+        rb.transform.DOScaleY(sOPlayerSetup.jumpScaleY, sOPlayerSetup.animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(sOPlayerSetup.ease);
+        rb.transform.DOScaleX(sOPlayerSetup.jumpScaleX, sOPlayerSetup.animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(sOPlayerSetup.ease);   
     }
 
     public void DestroyMe()
