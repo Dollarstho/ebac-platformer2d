@@ -23,7 +23,7 @@ public class ItemManager : Singleton<ItemManager>
     public void Reset()
     {
       coinCollect.coinValue = 0;
-      lifeCollect.lifeValue = 1;
+      lifeCollect.lifeValue = 0;
     }
 
     public void AddCoins(int amount = 1)

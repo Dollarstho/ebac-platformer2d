@@ -6,7 +6,7 @@ public class ItemCollectableBase : MonoBehaviour
 {
     public string compareTag = "Player";
     public ParticleSystem particle;
-    public float timeToHide = 3f;
+    public float timeToHide;
     public GameObject graphicItem;
 
     private void Awake()
