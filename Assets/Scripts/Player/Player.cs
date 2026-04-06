@@ -10,11 +10,18 @@ public class Player : MonoBehaviour
     public Vector2 velocity;
     public Animator animator;
 
+    [Header("Setup")]
     public SOPlayerSetup sOPlayerSetup;
 
     private float _currentspeed;
 
     private bool _isJump = false;
+
+    [Header("Jump Collision Check")]
+    public Collider2D collider2D;
+    public float distToGround;
+    public float spaceToGround = .1f;
+
 
 
     private void Awake()
@@ -23,6 +30,16 @@ public class Player : MonoBehaviour
         {
             healthBase.OnKill += OnPlayerKill;
         }
+
+        if (collider2D != null)
+        {
+            distToGround = collider2D.bounds.extents.y;
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.Raycast(transform.position, Vector2.down, distToGround + spaceToGround);
     }
 
     private void OnPlayerKill()
@@ -35,6 +52,7 @@ public class Player : MonoBehaviour
     {
         HandleMoviments();
         HandleJump();
+        IsGrounded();
     }
 
     private void HandleMoviments()
@@ -75,7 +93,7 @@ public class Player : MonoBehaviour
     private void HandleJump()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             animator.SetBool(sOPlayerSetup.boolJump, true);
             rb.velocity = Vector2.up * sOPlayerSetup.forcejump;
