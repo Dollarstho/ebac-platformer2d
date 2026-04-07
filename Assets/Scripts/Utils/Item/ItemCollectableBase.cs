@@ -9,6 +9,9 @@ public class ItemCollectableBase : MonoBehaviour
     public float timeToHide;
     public GameObject graphicItem;
 
+    [Header ("Sounds")]
+    public AudioSource audioSource;
+
     private void Awake()
     {
        if (particle != null) particle.transform.SetParent(null);
@@ -23,9 +26,9 @@ public class ItemCollectableBase : MonoBehaviour
     }
     protected virtual void Collect()
     {
+        OnCollect();
         if (graphicItem != null) graphicItem.SetActive(false);
         Invoke("HideObject", timeToHide);
-        OnCollect();
 
     }
 
@@ -37,6 +40,12 @@ public class ItemCollectableBase : MonoBehaviour
     protected virtual void OnCollect() 
     {
         if (particle != null) particle.Play();
+        Debug.Log("Coletou!");
+
+        if (audioSource != null && audioSource.clip != null)
+        {
+            AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+        }
     }
 
 
