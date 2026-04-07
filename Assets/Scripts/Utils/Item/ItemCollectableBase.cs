@@ -40,7 +40,6 @@ public class ItemCollectableBase : MonoBehaviour
     protected virtual void OnCollect() 
     {
         if (particle != null) particle.Play();
-        Debug.Log("Coletou!");
 
         if (audioSource != null && audioSource.clip != null)
         {
