@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class StartMenu : MonoBehaviour
@@ -16,12 +17,14 @@ public class StartMenu : MonoBehaviour
         {
             menuPanel.SetActive(true);
             buttonMenu.SetActive(false);
+            Time.timeScale = 0f;
         }
 
         public void CloseMenu()
         {
             menuPanel.SetActive(false);
             buttonMenu.SetActive(true);
+            Time.timeScale = 1f;
         }
 }
 

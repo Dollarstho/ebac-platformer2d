@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Audio;
+
 public class Player : MonoBehaviour
 {
     public HealthBase healthBase;
@@ -9,6 +11,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 velocity;
     public Animator animator;
+    public AudioSource audioSource;
 
     [Header("Setup")]
     public SOPlayerSetup sOPlayerSetup;
@@ -97,6 +100,11 @@ public class Player : MonoBehaviour
             animator.SetBool(sOPlayerSetup.boolJump, true);
             rb.velocity = Vector2.up * sOPlayerSetup.forcejump;
             rb.transform.localScale = Vector2.one;
+
+            if (audioSource != null && audioSource.clip != null)
+            {
+                AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+            }
 
             DOTween.Kill(rb.transform);
 
